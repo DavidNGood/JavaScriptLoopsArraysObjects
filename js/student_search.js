@@ -31,17 +31,21 @@ var students = [
     },
 ];
 
-var html = '';
 
-for (var i = 0; i < students.length; i++) {
-    html += '<p>';
-    
-    for (key in students[i]) {
-        html += key + ': ' + students[i][key] + '<br>';
+do {
+    var command = prompt('Enter Student Name or "quit" to Quit');
+
+    for (var i = 0; i < students.length; i++) {
+        var student = students[i];
+
+        if (student.name === command) {
+            var html = '<p>Name: ' + student.name + '<br>';
+            html += 'Track: ' + student.track + '<br>';
+            html += 'Achivements: ' + student.achievements + '<br>';
+            html += 'Points: ' + student.points + '</p>'; 
+            print(html);
+            break;
+        }        
     }
-
-    html += '</p>';
     
-}
-
-print(html);
+} while (command !== 'quit') 
