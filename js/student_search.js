@@ -48,4 +48,4 @@ do {
         }        
     }
     
-} while (command !== 'quit') 
+} while (command.toLowerCase() !== 'quit') 
